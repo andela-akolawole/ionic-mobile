@@ -1,0 +1,29 @@
+<ion-menu [content]="content">
+  <ion-header class="fade-blue">
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="menu-content no-scroll">
+    <div class="menu-img">
+        <div class="img-round">
+            <img src="http://lh4.ggpht.com/7C4cbRPUtLgWxvmEPvNAZeGD5pbGivLZweEzBQU8o5j8NyGz5l-X_dYFwL9p-K1UzBQXjotVZi8PEpW1LUk8ORs=s0"/>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menu-list fade-blue" menuClose>
+            Home
+        </div>
+        <div class="menu-list">
+            Gallery
+        </div>
+        <div class="menu-list fade-blue">
+            Contact
+        </div>
+    </div>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>
