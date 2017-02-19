@@ -1,0 +1,34 @@
+post-page {
+    .post-toolbar {
+        color: black;
+        height: 55px;
+        // border: 1px solid blue;
+        position: relative;
+        // background: rgba(0, 0, 0, 0.5);
+        z-index: 10000;
+        padding-top: 7px;
+        padding-left: 8px;
+        padding-right: 13px;
+    }
+    .post-toolbar .pastor-img img {
+        width:40px;
+        height: 40px;
+        float: left;
+        border-radius: 100%;
+    }
+    .post-toolbar .pastor-name {
+        padding-top: 13px;
+        padding-left: 10px;
+        font-size: 13px;
+        // border: 1px solid black;
+        float: left;
+        font-weight: bold;
+        color: #518df6;
+    }
+    .post-toolbar .heart-icon {
+        padding-top: 7px;
+        float: right;
+        font-size: 22px;
+        color: #fd3030;
+    }
+}

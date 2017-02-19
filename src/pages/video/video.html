@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Video</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="current-play" [src]="defaultYoutubePlaceholder">
+      <iframe id="player" type="text/html"
+  [src]="currentVideo"
+  frameborder="0"></iframe>
+  </div>
+  <div class="video-list">
+    <div class="video-li" *ngFor="let list of youtubeList" (click)="pickVideo(list.link)">
+      <div class="video-img">
+        <img [src]="defualtVideoThumbnail" [lazyLoad]="list.img" alt=""/>
+      </div>
+      <div class="video-title">
+        {{list.name}}
+      </div>
+    </div>
+        <div class="video-li">
+      <div class="video-img">
+        <img src="http://img.youtube.com/vi/pJIulyNcrnc/0.jpg" alt=""/>
+      </div>
+      <div class="video-title">
+        Ryan de la Cruz - Know About Me (Official Video)
+      </div>
+    </div>
+        <div class="video-li">
+      <div class="video-img">
+        <img src="http://img.youtube.com/vi/pJIulyNcrnc/0.jpg" alt=""/>
+      </div>
+      <div class="video-title">
+        Ryan de la Cruz - Know About Me (Official Video)
+      </div>
+    </div>
+  </div>
+</ion-content>
