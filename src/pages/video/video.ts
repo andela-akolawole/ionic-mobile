@@ -33,7 +33,7 @@ export class VideoPage {
     }
   ]
 
-  currentVideo: any = this.sanitizer.bypassSecurityTrustResourceUrl(this.defaultYoutubePlaceholder);
+  currentVideo: any = this.sanitizer.bypassSecurityTrustResourceUrl('http://www.youtube.com/embed/M7lc1UVf-VE');
 
   pickVideo(videoUrl: any) {
     console.log(window.location, 'window');

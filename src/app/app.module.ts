@@ -6,8 +6,10 @@ import { LazyLoadImageModule } from 'ng2-lazyload-image';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { PostPage } from '../pages/post/postPage';
+import {TestimonyPage } from '../pages/testimony/testimony';
 import { TabsPage } from '../pages/tabs/tabs';
 import { VideoPage } from '../pages/video/video';
+import { CreateTestimonyPage } from '../pages/create_testimony/createTestimony';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { VideoPage } from '../pages/video/video';
     HomePage,
     PostPage,
     TabsPage,
-    VideoPage
+    VideoPage,
+    TestimonyPage,
+    CreateTestimonyPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,8 +34,10 @@ import { VideoPage } from '../pages/video/video';
     ContactPage,
     PostPage,
     HomePage,
+    TestimonyPage,
     VideoPage,
-    TabsPage
+    TabsPage,
+    CreateTestimonyPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

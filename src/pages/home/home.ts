@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PostPage } from '../post/postPage';
 import { VideoPage } from '../video/video';
+import { TestimonyPage } from '../testimony/testimony';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class HomePage {
   }
 
   gotoPostPage() {
-    this.navCtrl.push(VideoPage);
+    this.navCtrl.push(TestimonyPage);
   }
 
 }

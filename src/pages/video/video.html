@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <div class="current-play" [src]="defaultYoutubePlaceholder">
+  <div class="current-play">
       <iframe id="player" type="text/html"
   [src]="currentVideo"
-  frameborder="0"></iframe>
+  frameborder="0" style="background: url(http://localhost:8100/assets/img/youtube-video.jpg); background-size: contain;"></iframe>
   </div>
   <div class="video-list">
     <div class="video-li" *ngFor="let list of youtubeList" (click)="pickVideo(list.link)">
