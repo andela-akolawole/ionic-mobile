@@ -36,7 +36,6 @@ export class VideoPage {
   currentVideo: any = this.sanitizer.bypassSecurityTrustResourceUrl('http://www.youtube.com/embed/M7lc1UVf-VE');
 
   pickVideo(videoUrl: any) {
-    console.log(window.location, 'window');
     let url = videoUrl.replace("watch?v=", "embed/");
     this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }

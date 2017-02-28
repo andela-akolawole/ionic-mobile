@@ -5,7 +5,7 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { PostPage } from '../post/postPage';
 import { VideoPage } from '../video/video';
-import { TestimonyPage } from '../testimony/testimony';
+import { GalleryPage } from '../gallery/gallery';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -15,7 +15,7 @@ export class TabsPage {
   // should be each tab's root Page
   tab1Root: any = HomePage;
   tab2Root: any = AboutPage;
-  tab3Root: any = TestimonyPage;
+  tab3Root: any = GalleryPage;
   tab4Root: any = VideoPage;
 
   constructor() {

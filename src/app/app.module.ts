@@ -10,9 +10,14 @@ import {TestimonyPage } from '../pages/testimony/testimony';
 import { TabsPage } from '../pages/tabs/tabs';
 import { VideoPage } from '../pages/video/video';
 import { CreateTestimonyPage } from '../pages/create_testimony/createTestimony';
+import { GalleryPage } from '../pages/gallery/gallery';
+import { GalleryModal } from 'ionic-gallery-modal';
+import { ZoomableImage } from 'ionic-gallery-modal';
 
 @NgModule({
   declarations: [
+    GalleryModal,
+    ZoomableImage,
     MyApp,
     AboutPage,
     ContactPage,
@@ -21,7 +26,8 @@ import { CreateTestimonyPage } from '../pages/create_testimony/createTestimony';
     TabsPage,
     VideoPage,
     TestimonyPage,
-    CreateTestimonyPage
+    CreateTestimonyPage,
+    GalleryPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -29,6 +35,7 @@ import { CreateTestimonyPage } from '../pages/create_testimony/createTestimony';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    GalleryModal,
     MyApp,
     AboutPage,
     ContactPage,
@@ -37,7 +44,8 @@ import { CreateTestimonyPage } from '../pages/create_testimony/createTestimony';
     TestimonyPage,
     VideoPage,
     TabsPage,
-    CreateTestimonyPage
+    CreateTestimonyPage,
+    GalleryPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

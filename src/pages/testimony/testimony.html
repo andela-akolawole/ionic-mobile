@@ -15,16 +15,29 @@
 
 
 <ion-content>
-    <ion-card>
+  <ion-refresher (ionRefresh)="getTestimonies($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let item of testimonies" (click)="submitTestimony()">
 
     <ion-card-header>
-        Card Header
+      {{ item.fullName }}
     </ion-card-header>
 
     <ion-card-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore
+      <p>
+        {{item.testimony}}
+      </p>
     </ion-card-content>
 
-    </ion-card>
+  </ion-card>
+  <ion-card *ngIf="testimonies <= 0">
+
+    <ion-card-content>
+      <p>
+        No testimonies yet
+      </p>
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>

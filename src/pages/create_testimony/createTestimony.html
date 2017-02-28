@@ -7,14 +7,14 @@
 
 <ion-content>
   <div class="testimony">
-    <form>
-        <input class="form-input" placeholder="Your Full Name" name="fullName"/>
-        <select class="form-input" name="gender">
-          <option>Male</option>
-          <option>Female</option>
+    <form (ngSubmit)="submitTestimony()">
+        <input class="form-input" [(ngModel)]="form.fullName" placeholder="Your Full Name" name="fullName"/>
+        <select class="form-input" name="gender" [(ngModel)]="form.gender">
+          <option value="male" selected="selected">Male</option>
+          <option value="female">Female</option>
         </select>
-        <textarea class="form-input" name="details" placeholder="Testimony details"></textarea>
-        <button ion-button color="secondary" type="submit" class="btn-long">Submit</button>
+        <textarea class="form-input" [(ngModel)]="form.testimony" name="testimony" placeholder="Testimony details"></textarea>
+        <button full round ion-button color="secondary" type="submit">Submit</button>
     </form>
   </div>
 </ion-content>

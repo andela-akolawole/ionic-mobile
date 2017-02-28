@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>Gallery</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="gallery">
+        <img *ngFor="let photo of photos; let i=index;" class="gallery-img" (click)="presentGalleryModal(i)" [src]="photo.url" />
+    </div>
+</ion-content>
