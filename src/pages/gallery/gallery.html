@@ -5,7 +5,11 @@
 </ion-header>
 
 <ion-content>
-    <div class="gallery">
-        <img *ngFor="let photo of photos; let i=index;" class="gallery-img" (click)="presentGalleryModal(i)" [src]="photo.url" />
-    </div>
+  <ion-refresher (ionRefresh)="getGalleryImages($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="gallery">
+    <img *ngFor="let photo of photos; let i=index;" class="gallery-img" (click)="presentGalleryModal(i)" [src]="photo.url" />
+    <button ion-button class="btn-ash" full (click)="loadMore()"> Load More </button>
+  </div>
 </ion-content>

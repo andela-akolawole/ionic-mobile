@@ -9,33 +9,16 @@
 
 <ion-content>
   <div class="current-play">
-      <iframe id="player" type="text/html"
-  [src]="currentVideo"
-  frameborder="0" style="background: url(http://localhost:8100/assets/img/youtube-video.jpg); background-size: contain;"></iframe>
+    <div id="video-placeholder" style="width: 100%" class="embed-responsive-item"></div>
+    <div class="videoImage" *ngIf="!onPlaying" frameborder="0" allowfullscreen style="background: url('http://res.cloudinary.com/deoxeurdo/image/upload/v1488832294/youtube-video_e1fazz.jpg'); background-size: contain;"></div>
   </div>
   <div class="video-list">
-    <div class="video-li" *ngFor="let list of youtubeList" (click)="pickVideo(list.link)">
+    <div class="video-li" *ngFor="let list of youtubeList" (click)="pickVideo($event, list)">
       <div class="video-img">
-        <img [src]="defualtVideoThumbnail" [lazyLoad]="list.img" alt=""/>
+        <img [src]="list.snippet.thumbnails.high.url" alt="" />
       </div>
       <div class="video-title">
-        {{list.name}}
-      </div>
-    </div>
-        <div class="video-li">
-      <div class="video-img">
-        <img src="http://img.youtube.com/vi/pJIulyNcrnc/0.jpg" alt=""/>
-      </div>
-      <div class="video-title">
-        Ryan de la Cruz - Know About Me (Official Video)
-      </div>
-    </div>
-        <div class="video-li">
-      <div class="video-img">
-        <img src="http://img.youtube.com/vi/pJIulyNcrnc/0.jpg" alt=""/>
-      </div>
-      <div class="video-title">
-        Ryan de la Cruz - Know About Me (Official Video)
+        {{list.snippet.title}}
       </div>
     </div>
   </div>

@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { LoadingController, NavController, ToastController } from 'ionic-angular';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { GalleryModal } from 'ionic-gallery-modal';
-import { TestimonyApi } from '../../shared';
+import { API } from '../../shared';
 
 @Component({
   selector: 'page-createTestimony',
   templateUrl: 'createTestimony.html',
-  providers: [TestimonyApi]
+  providers: [API]
 })
 
 export class CreateTestimonyPage {
   form: Object = {};
   constructor(public navCtrl: NavController,
-    private testimonyApi: TestimonyApi,
+    private testimonyApi: API,
     private loadingController: LoadingController,
     private toastController: ToastController) { }
 

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { LoadingController, NavController, ToastController } from 'ionic-angular';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { CreateTestimonyPage } from '../create_testimony/createTestimony';
-import { TestimonyApi } from '../../shared';
+import { API } from '../../shared';
 
 @Component({
   selector: 'page-testimony',
   templateUrl: 'testimony.html',
-  providers: [TestimonyApi]
+  providers: [API]
 })
 
 export class TestimonyPage {
@@ -15,7 +15,7 @@ export class TestimonyPage {
   testimonies: any;
   checkTestimony: Boolean = false;
   constructor(public navCtrl: NavController,
-    private testimonyApi: TestimonyApi,
+    private testimonyApi: API,
     private loadingController: LoadingController,
     private toastController: ToastController) { }
 
@@ -37,5 +37,16 @@ export class TestimonyPage {
           loader.dismiss();
         });
     })
+  }
+
+  getTestimonies(refresher) {
+    setTimeout(() => {
+      this.testimonyApi.getTestimonies()
+        .subscribe(data => {
+          console.log(data, 'mydate');
+          this.testimonies = data;
+        });
+        refresher.complete();
+    }, 3000)
   }
 }

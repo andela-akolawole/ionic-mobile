@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class TestimonyApi {
+export class API {
 
     private baseUrl = 'http://dtim.herokuapp.com/api'
     constructor(private http: Http) {
@@ -32,6 +32,13 @@ export class TestimonyApi {
             return res;
         })
         .catch(this.handleError);
+    }
+
+    getGalleryImages(limit): Observable<any> {
+        return this.http.get(`${this.baseUrl}/gallery/images?limit=${limit}`)
+            .map((res: Response) => {
+                return res.json();
+            })
     }
 
 }
