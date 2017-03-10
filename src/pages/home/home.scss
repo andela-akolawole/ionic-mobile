@@ -1,6 +1,7 @@
-page-home {
+    page-home {
     .post-card {
         height: 196px;
+        position: relative;
     }
     .post-content {
         position: absolute;
@@ -60,6 +61,18 @@ page-home {
         font-size: 24px;
         color: red
     }
+    }
+
+    .post-date {
+        font-size: 13px;
+        font-weight: bold;
+        width: auto;
+        padding: 10px;
+        color: #ffffff;
+        top: 150px;
+        height: auto;
+        background: rgba(252, 54, 61, 0.81);
+        position: absolute;
     }
 
     

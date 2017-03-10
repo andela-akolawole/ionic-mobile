@@ -9,29 +9,13 @@
 
 <ion-content>
   <ion-row responsive-sm>
-    <ion-col>
-      <ion-card class="post-card" (click)="gotoPostPage()">
-        <div class="post-title">
-          Nine Inch Nails Live Drake's Raptastic Raptors soon jump
-
+    <ion-col *ngFor="let post of posts">
+      <ion-card class="post-card" (click)="gotoPostPage(post)">
+        <div class="post-date">
+          {{post.createdAt}}
         </div>
-        <img src="http://ionicmaterial.com/preview/img/toronto.jpg" />
-      </ion-card>
-    </ion-col>
-
-    <ion-col>
-      <ion-card class="post-card" (click)="gotoPostPage()">
         <div class="post-title">
-          Nine Inch Nails Live Drake's Raptastic Raptors
-        </div>
-        <img src="http://ionicmaterial.com/preview/img/toronto.jpg" />
-      </ion-card>
-    </ion-col>
-
-    <ion-col>
-      <ion-card class="post-card" (click)="gotoPostPage()">
-        <div class="post-title">
-          Nine Inch Nails Live Drake's Raptastic Raptors
+          {{post.title}}
         </div>
         <img src="http://ionicmaterial.com/preview/img/toronto.jpg" />
       </ion-card>

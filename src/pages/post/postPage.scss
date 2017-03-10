@@ -1,4 +1,7 @@
 post-page {
+    .post-card {
+        // text-align: center
+    }
     .post-toolbar {
         color: black;
         height: 55px;
@@ -30,5 +33,30 @@ post-page {
         float: right;
         font-size: 22px;
         color: #fd3030;
+    }
+
+    .post-title {
+        color: white;
+        // border:1px solid red;
+        top: 140px;
+        padding: 8px;
+        right : 8px;
+        font-size: 22px;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .bible-text {
+        font-size: 13px;
+        font-weight: bold;
+        width: auto;
+        padding: 10px;
+        color: #ffffff;
+        top: 240px;
+        height: auto;
+        background: rgba(252, 54, 61, 0.81);
+        position: absolute;
     }
 }

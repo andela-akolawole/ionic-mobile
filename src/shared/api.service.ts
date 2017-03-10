@@ -41,4 +41,11 @@ export class API {
             })
     }
 
+    getPastorPost(limit): Observable<any> {
+        return this.http.get(`${this.baseUrl}/pastor-post/get?limit=${limit}`)
+            .map((res: Response) => {
+                return res.json();
+            })
+    }
+
 }

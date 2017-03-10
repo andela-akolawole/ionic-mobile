@@ -11,32 +11,21 @@
     <ion-card class="post-card">
         <div class="post-toolbar">
             <div class="pastor-img">
-                <img src="http://lh4.ggpht.com/7C4cbRPUtLgWxvmEPvNAZeGD5pbGivLZweEzBQU8o5j8NyGz5l-X_dYFwL9p-K1UzBQXjotVZi8PEpW1LUk8ORs=s0" />
+                <img src="http://lh4.ggpht.com/7C4cbRPUtLgWxvmEPvNAZeGD5pbGivLZweEzBQU8o5j8NyGz5l-X_dYFwL9p-K1UzBQXjotVZi8PEpW1LUk8ORs=s0"
+                />
             </div>
             <div class="pastor-name">
                 Super bowl admin
             </div>
-            <div class="heart-icon">
-                <ion-icon name="heart"></ion-icon>
-            </div>
+        </div>
+        <div class="post-title">
+            {{post.title}}
+        </div>
+        <div class="bible-text">
+            {{post.bibleText}}
         </div>
         <img src="http://ionicmaterial.com/preview/img/toronto.jpg" />
-        <ion-card-content>
-            <ion-card-title>
-                Nine Inch Nails Live
-            </ion-card-title>
-            <p style="text-align:left"> The most popular industrial group ever, and largely responsible for bringing the music to a mass audience. The most popular
-industrial group ever, and largely responsible for bringing the music to a mass audience. The most popular industrial group
-ever, and largely responsible for bringing the music to a mass audience. The most popular industrial group ever, and largely
-responsible for bringing the music to a mass audience. The most popular industrial group ever, and largely responsible for
-bringing the music to a mass audience. The most popular industrial group ever, and largely responsible for bringing the music
-to a mass audience. The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-The most popular industrial group ever, and largely responsible for bringing the music to a mass audience. The most popular
-industrial group ever, and largely responsible for bringing the music to a mass audience. The most popular industrial group
-ever, and largely responsible for bringing the music to a mass audience. The most popular industrial group ever, and largely
-responsible for bringing the music to a mass audience. The most popular industrial group ever, and largely responsible for
-bringing the music to a mass audience.
-</p>
-</ion-card-content>
-</ion-card>
+        <ion-card-content style="text-align:justify" [innerHTML]="post.details" >
+        </ion-card-content>
+    </ion-card>
 </ion-content>
