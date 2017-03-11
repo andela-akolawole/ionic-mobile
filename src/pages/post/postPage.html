@@ -15,16 +15,17 @@
                 />
             </div>
             <div class="pastor-name">
-                Super bowl admin
+                Pst John Okene
             </div>
         </div>
         <div class="post-title">
+
             {{post.title}}
         </div>
         <div class="bible-text">
             {{post.bibleText}}
         </div>
-        <img src="http://ionicmaterial.com/preview/img/toronto.jpg" />
+        <img [src]="post.imageUrl" />
         <ion-card-content style="text-align:justify" [innerHTML]="post.details" >
         </ion-card-content>
     </ion-card>

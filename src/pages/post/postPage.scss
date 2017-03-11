@@ -1,6 +1,10 @@
 post-page {
     .post-card {
-        // text-align: center
+        // height: 356px;
+    }
+    .post-card img {
+        width: 100%;
+        height: 226px;
     }
     .post-toolbar {
         color: black;
@@ -35,6 +39,10 @@ post-page {
         color: #fd3030;
     }
 
+    .post-title::first-letter {
+        text-transform: capitalize;
+    }
+
     .post-title {
         color: white;
         // border:1px solid red;
@@ -43,10 +51,12 @@ post-page {
         right : 8px;
         font-size: 22px;
         width: 100%;
+        text-transform: lowercase;
         position: absolute;
         text-align: center;
         font-weight: bold;
     }
+
 
     .bible-text {
         font-size: 13px;
