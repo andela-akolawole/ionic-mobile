@@ -10,16 +10,15 @@
 <ion-content>
     <ion-card class="post-card">
         <div class="post-toolbar">
-            <div class="pastor-img">
-                <img src="http://lh4.ggpht.com/7C4cbRPUtLgWxvmEPvNAZeGD5pbGivLZweEzBQU8o5j8NyGz5l-X_dYFwL9p-K1UzBQXjotVZi8PEpW1LUk8ORs=s0"
+            <div class="pastor-img" *ngIf="pastorPicture">
+                <img [src]="pastorPicture"
                 />
             </div>
             <div class="pastor-name">
-                Pst John Okene
+                {{post.author}}
             </div>
         </div>
         <div class="post-title">
-
             {{post.title}}
         </div>
         <div class="bible-text">

@@ -1,0 +1,114 @@
+    page-daily-dev {
+    .post-card {
+        height: 196px;
+        position: relative;
+    }
+    .post-card img {
+        width: 100%;
+        height: 196px;
+    }
+    .post-content {
+        position: absolute;
+        top: -188px;
+        // height: 10px !important;
+        padding-top: 1px;
+        color:white;
+        // border: 1px solid #ffffff;
+    }
+    .post-title {
+        color: white;
+        padding: 10px;
+        text-transform: uppercase;
+        font-size: 16px;
+        position: absolute;
+        font-weight: bold;
+    }
+    .post-title .heart-icon {
+        float: right;
+    }
+    .post-icons {
+        padding-left: 15px;
+        position: relative;
+        top: -87px;
+        color: blue;
+    }
+    .post-icons .heart-icon {
+        font-size: 24px;
+        color: white
+    }
+    .post-icons .heart-icon:hover {
+        font-size: 24px;
+        color: red
+    }
+
+    @media(min-height: 700px) {
+        .post-icons {
+            padding-left: 15px;
+            position: relative;
+            border: 1px solid #ffffff;
+            top: -60px;
+            color: blue;
+        }
+    }
+
+    @media(min-height: 732px) {
+            .post-icons {
+        padding-left: 15px;
+        position: relative;
+        top: -130px;
+        color: blue;
+    }
+    .post-icons .heart-icon {
+        font-size: 24px;
+        color: white
+    }
+    .post-icons .heart-icon:hover {
+        font-size: 24px;
+        color: red
+    }
+    }
+
+    .post-date {
+        font-size: 13px;
+        font-weight: bold;
+        width: auto;
+        padding: 10px;
+        color: #ffffff;
+        top: 150px;
+        height: auto;
+        background: rgba(252, 54, 61, 0.81);
+        position: absolute;
+    }
+
+    .noPost {
+        text-align: center;
+        font-weight: 2000;
+        padding-top: 70px;
+        font-size: 20px;
+    }
+
+    .loadMore {
+        padding: 20px;
+    }
+
+    
+    // @media(min-width: 640px) {
+    // .post-card {
+    //     height: 168px;
+    // }
+    // .post-content {
+    //     position: relative;
+    //     top: -168px;
+    //     // height: 10px !important;
+    //     padding-top: 1px;
+    //     color:white;
+    //     // border: 1px solid #ffffff;
+    // }
+    // .post-content .post-title {
+    //     color: #ffffff;
+    //     padding-top: 20px;
+    //     font-size: 24px;
+    //     font-weight: bold;
+    // }
+    // }
+}

@@ -17,7 +17,7 @@ export class GalleryPage {
 
   }
 
-  photos: any;
+  photos: any = [];
   limit: any;
 
   presentGalleryModal(index) {
@@ -29,11 +29,17 @@ export class GalleryPage {
   }
 
   ionViewDidLoad() {
-    this.Api.getGalleryImages(5)
-      .subscribe(res => {
-        console.log(res, 'res');
-        this.photos = res;
-      });
+    let loader = this.loadingController.create({
+      content: "Hold on, looking for some pictures..."
+    });
+
+    return loader.present().then(() => {
+      return this.Api.getGalleryImages(5)
+        .subscribe(res => {
+          this.photos = res;
+          loader.dismiss();
+        });
+    });
   }
 
   getGalleryImages(refresher) {

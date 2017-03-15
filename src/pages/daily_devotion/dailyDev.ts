@@ -7,11 +7,11 @@ import { API } from '../../shared/api.service';
 
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-daily-dev',
+  templateUrl: 'dailyDev.html',
   providers: [API]
 })
-export class HomePage {
+export class DailyDevotion {
 
   posts: any = [];
   limit: any = 5;
@@ -28,11 +28,11 @@ export class HomePage {
   fetchPost() {
 
     let loader = this.loadingController.create({
-      content: "Hold on, I'm looking for new posts."
+      content: "Hold on, I'm looking for today's devotional post"
     });
 
     return loader.present().then(() => {
-      return this.Api.getPastorPost(this.limit)
+      return this.Api.getDailyDevotion(this.limit)
         .subscribe(data => {
           if (data.length <= 0) {
             this.noPost = true;
@@ -51,7 +51,7 @@ export class HomePage {
 
   getPost(refresher) {
     setTimeout(() => {
-      this.Api.getPastorPost(5)
+      this.Api.getDailyDevotion(5)
         .subscribe(data => {
           if (data.length <= 0) {
             this.noPost = true;
@@ -66,7 +66,7 @@ export class HomePage {
 
   loadMore() {
     this.limit = this.limit + 5;
-    this.Api.getPastorPost(this.limit)
+    this.Api.getDailyDevotion(this.limit)
       .subscribe(data => {
         return this.posts = data;
       });

@@ -10,6 +10,7 @@
   </ion-refresher>
   <div class="gallery">
     <img *ngFor="let photo of photos; let i=index;" class="gallery-img" (click)="presentGalleryModal(i)" [src]="photo.url" />
-    <button ion-button class="btn-ash" full (click)="loadMore()"> Load More </button>
+    <h3> Sorry We don't have any image yet </h3>
+    <button ion-button class="btn-ash" *ngIf="photos.length >= 5" full (click)="loadMore()"> Load More </button>
   </div>
 </ion-content>

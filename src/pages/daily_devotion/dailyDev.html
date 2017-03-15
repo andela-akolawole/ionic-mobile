@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Daily Devotion</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -26,7 +26,7 @@
     <ion-col *ngIf="noPost">
       <ion-card class="post-card">
         <div class="noPost">
-          <b>No Post Yet :(</b>
+          <b>No Post Yet :( </b>
         </div>
         <!--<div class="post-date">
           {{post.createdAt}}
@@ -37,7 +37,7 @@
         <img src="http://ionicmaterial.com/preview/img/toronto.jpg" />-->
       </ion-card>
     </ion-col>
-    <div class="loadMore" *ngIf="posts.length >= 5">
+    <div class="loadMore" *ngIf="posts.length !== 0 && limit >= 5">
       <button round ion-button full color="secondary" (click)="loadMore()"> Load More </button>
     </div>
   </ion-row>

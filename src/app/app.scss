@@ -20,7 +20,7 @@ app-page {
      overflow: hidden;
     }
     .menu-content {
-        background: #387ef5;
+        background: #0065b0;
     }
     .menu {
         // padding-top: 300px !important;
@@ -34,7 +34,7 @@ app-page {
         // border: 1px solid #000000;
     }
     .fade-blue {
-        background: #518df6
+        background: #006ec2
     }
     .menu-img {
         height: 250px;
@@ -44,14 +44,15 @@ app-page {
     }
     .img-round {
         width: 200px;
-        height: 200px;
+        height: 240px;
+        background-position-x: 50px;
+        background-position-y: 40px;
+        background-image: url('http://res.cloudinary.com/deoxeurdo/image/upload/v1489329431/logo_gxnepi.png');
         // border: 3px solid #ffffff;
-        border-radius: 100%;
+        // border-radius: 100%;
+        background-repeat : no-repeat;
     }
-    .img-round img {
-        width: 200px;
-        height: 200px;
-        // border: 3px solid #ffffff;
-        border-radius: 100%;
+    .space-top {
+        margin-top: 80px;
     }
 }

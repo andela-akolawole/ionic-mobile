@@ -14,7 +14,7 @@ import { PostPage } from '../post/postPage';
 export class VideoPage {
   defaultYoutubePlaceholder = `${window.location.origin}/assets/img/youtube-video.jpg`
   defualtVideoThumbnail: any = `${window.location.origin}/assets/img/video-thumbnail-placeholder.jpg`;
-
+  currentVideo: any = this.sanitizer.bypassSecurityTrustResourceUrl('');
   channelID: string = 'UCsemGiQ-B2Wh42kLI_4u6_g';
   
   maxResults: string = '10';
@@ -23,7 +23,6 @@ export class VideoPage {
   searchQuery: string = '';
   youtubeList: any;
   onPlaying: boolean = false;
-  currentVideo: any;
 
   constructor(public navCtrl: NavController, private sanitizer: DomSanitizer,
     private http: Http, private loadingController: LoadingController, public ytPlayer: YoutubeService) {
@@ -57,11 +56,9 @@ export class VideoPage {
     });
   }
 
-
-  pickVideo(e, video: any) {
-    console.log(video, 'video');
-    this.onPlaying = true;
-    this.ytPlayer.launchPlayer(video.id, video.snippet.title);
+  pickVideo(video: any) {
+    let url = `https://youtube.com/embed/${video.id.videoId}?autoplay=1`
+    this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   gotoPostPage() {
     this.navCtrl.push(PostPage);

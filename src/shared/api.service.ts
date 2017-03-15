@@ -25,13 +25,13 @@ export class API {
             });
     }
 
-    submitTestimony(data):Promise<any> {
+    submitTestimony(data): Promise<any> {
         return this.http.post(`${this.baseUrl}/testimony/submit`, data)
-        .toPromise()
-        .then(res => {
-            return res;
-        })
-        .catch(this.handleError);
+            .toPromise()
+            .then(res => {
+                return res;
+            })
+            .catch(this.handleError);
     }
 
     getGalleryImages(limit): Observable<any> {
@@ -43,6 +43,20 @@ export class API {
 
     getPastorPost(limit): Observable<any> {
         return this.http.get(`${this.baseUrl}/pastor-post/get?limit=${limit}`)
+            .map((res: Response) => {
+                return res.json();
+            })
+    }
+
+    getDailyDevotion(limit): Observable<any> {
+        return this.http.get(`${this.baseUrl}/daily-devotion/get?limit=${limit}`)
+            .map((res: Response) => {
+                return res.json();
+            })
+    }
+
+    getPastorPicture(): Observable<any> {
+        return this.http.get(`${this.baseUrl}/pastor-picture/get`)
             .map((res: Response) => {
                 return res.json();
             })

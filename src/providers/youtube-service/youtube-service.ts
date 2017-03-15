@@ -11,8 +11,8 @@ export class YoutubeService {
     playerId: null,
     videoId: null,
     videoTitle: null,
-    playerHeight: '100',
-    playerWidth: '100'
+    playerHeight: '200',
+    playerWidth: '200'
   }
 
   constructor() {
@@ -53,16 +53,16 @@ export class YoutubeService {
     // already been triggered
     // TODO: handle this in build or in nicer in code
     console.log("Running Setup Player");
-    // setTimeout(() => {
-    //   window['onYouTubeIframeAPIReady'] = () => {
-    //     if (window['YT']) {
-    //       console.log('Youtube API is ready');
-    //       this.youtube.ready = true;
-    //       this.bindPlayer('video-placeholder');
-    //       return this.loadPlayer();
-    //     }
-    //   };
-    // }, 2000)
+    setTimeout(() => {
+      window['onYouTubeIframeAPIReady'] = () => {
+        if (window['YT']) {
+          console.log('Youtube API is ready');
+          this.youtube.ready = true;
+          this.bindPlayer('video-placeholder');
+          return this.loadPlayer();
+        }
+      };
+    }, 2000);
     if (window.YT && window.YT.Player) {
       console.log('Youtube API is ready');
       this.youtube.ready = true;

@@ -24,10 +24,8 @@
       {{ item.fullName }}
     </ion-card-header>
 
-    <ion-card-content>
-      <p>
-        {{item.testimony}}
-      </p>
+    <ion-card-content [innerHtml]="item.testimony">
+      
     </ion-card-content>
 
   </ion-card>
