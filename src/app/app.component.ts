@@ -8,6 +8,7 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { DailyDevotion } from '../pages/daily_devotion/dailyDev';
 import { TestimonyPage } from '../pages/testimony/testimony';
 import { VideoPage } from '../pages/video/video';
+import { Store } from '../pages/store/store';
 
 
 @Component({
@@ -51,6 +52,9 @@ export class MyApp {
         break;
       case 'Daily-dev':
         this.nav.push(DailyDevotion);
+        break;
+      case 'Store':
+        this.nav.push(Store); 
     }
   }
 }

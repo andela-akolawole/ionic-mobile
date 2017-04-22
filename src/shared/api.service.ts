@@ -62,4 +62,11 @@ export class API {
             })
     }
 
+    getEbooks(): Observable<any> {
+        return this.http.get(`${this.baseUrl}/ebook/get`)
+            .map((res: Response) => {
+                return res.json();
+            });
+    }
+
 }

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>Store</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="book-list">
+      <div class="book" *ngFor="let book of books">
+        <div class="book-pic">
+          <img [src]="book.bookCover"/>
+          <div class="price">
+            {{book.bookPrice}}
+          </div>
+        </div>
+        <div class="book-desc">
+          <div class="book-name">
+            {{book.bookName}}
+          </div>
+          <div class="book-price">
+            <button ion-button color="danger" full (click)="buyBook(book)"><p>Buy Now</p>
+              <ion-icon name="cart" style="margin-left: 10px;"></ion-icon></button>
+          </div>
+        </div>
+      </div>
+      <div class="book" *ngIf="books.length <= 0">
+        <h4 style="text-align: center">No ebooks yet</h4>
+      </div>
+    </div>
+</ion-content>

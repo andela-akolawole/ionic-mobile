@@ -9,6 +9,8 @@ import { PostPage } from '../pages/post/postPage';
 import {TestimonyPage } from '../pages/testimony/testimony';
 import { TabsPage } from '../pages/tabs/tabs';
 import { VideoPage } from '../pages/video/video';
+import { Store } from '../pages/store/store';
+import { BookModal } from '../pages/bookModal/bookModal';
 import { CreateTestimonyPage } from '../pages/create_testimony/createTestimony';
 import { DailyDevotion } from '../pages/daily_devotion/dailyDev';
 import { GalleryPage } from '../pages/gallery/gallery';
@@ -26,6 +28,8 @@ import { GalleryModal, ZoomableImage } from 'ionic-gallery-modal';
     TestimonyPage,
     CreateTestimonyPage,
     GalleryPage,
+    BookModal,
+    Store,
     DailyDevotion
   ],
   imports: [
@@ -41,9 +45,11 @@ import { GalleryModal, ZoomableImage } from 'ionic-gallery-modal';
     TestimonyPage,
     VideoPage,
     TabsPage,
+    BookModal,
     ZoomableImage,    
     CreateTestimonyPage,
     GalleryPage,
+    Store,
     DailyDevotion
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

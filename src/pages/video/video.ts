@@ -48,7 +48,7 @@ export class VideoPage {
       this.http.get(url).map(res => res.json()).subscribe(data => {
         this.youtubeList = data.items;
         const videoId = this.youtubeList[0].id.videoId;
-        let videoUrl = `https://youtube.com/embed/${videoId}?autoplay=1`;
+        let videoUrl = `https://youtube.com/embed/${videoId}`;
         this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
         console.log(this.youtubeList);
         loader.dismiss();
@@ -57,7 +57,7 @@ export class VideoPage {
   }
 
   pickVideo(video: any) {
-    let url = `https://youtube.com/embed/${video.id.videoId}?autoplay=1`
+    let url = `https://youtube.com/embed/${video.id.videoId}`
     this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   gotoPostPage() {

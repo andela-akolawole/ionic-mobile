@@ -1,0 +1,33 @@
+page-book-modal {
+    .book-name {
+        text-align: center;
+    }
+
+    .book-desc {
+        height: auto;
+    }
+
+    .book-pic {
+        width: 130px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .book-pic img {
+        width: 100%;
+    }
+
+    .book-price {
+        text-align: center;
+    }
+
+    .book-details {
+        margin-top: 15px;
+        width: 100%;
+        background-color: rgba(207, 207, 207, 0.33);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px; 
+        text-align:center;
+    }
+}

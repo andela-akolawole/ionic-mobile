@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>Store</ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="book-name">
+        <h3>{{ book.bookName }}</h3>
+    </div>
+    <div class="book-desc">
+        <div class="book-pic">
+            <img [src]="book.bookCover" />
+        </div>
+    </div>
+    <div class="book-details" style="text-align:center;" [innerHTML]="book.bookDesc">
+    </div>
+    <button ion-button color="secondary" full (click)="payNow(book.bookPaymentUrl)">Pay Now</button>
+</ion-content>

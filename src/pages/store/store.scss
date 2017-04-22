@@ -1,0 +1,59 @@
+page-store {
+    .book {
+        padding: 10px;
+        // border: 1px solid black;
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .book .book-pic {
+        width: 130px;
+        position: relative;
+        // border: 1px solid black;
+        // height: 100px;
+        margin-right: 10px;
+    }
+
+    .book .book-pic img {
+        width:100%;
+    }
+
+    .book .book-desc {
+        -webkit-flex: 1;
+        flex: 1;
+    }
+
+    .view-button {
+        background: #4fbae8;
+    }
+
+    .book .book-pic .price {
+        position: absolute;
+        padding: 8px;
+        width: 100%;
+        color: #ffffff;
+        font-weight: 600;
+        top: 150px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.61);
+    }
+
+    .book .book-name {
+        font-weight: bold;
+        font-size: 15px;
+        // border: 1px solid black;
+        height: auto;
+    }
+
+    .book .book-price {
+        // font-weight: bold;
+        // border: 1px solid black;
+        height: auto;
+    }
+
+    .book .book-desc .book-space {
+        width: 100%;
+        height: 10% * 5;
+    }
+}
