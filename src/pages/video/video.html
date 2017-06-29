@@ -9,11 +9,11 @@
 
 <ion-content>
   <div class="current-play">
-    <iframe id="player" class="videoImage" type="text/html" [src]="currentVideo" style="background: url('http://res.cloudinary.com/deoxeurdo/image/upload/v1488832294/youtube-video_e1fazz.jpg'); background-size: contain;"  frameborder="0"></iframe>
-    <!--<div class="videoImage" id="video-placeholder" *ngIf="!onPlaying"></div>-->
+    <div id="video-player" class="videoImage" type="text/html" style="background: url('http://res.cloudinary.com/deoxeurdo/image/upload/v1488832294/youtube-video_e1fazz.jpg'); background-size: contain;"  frameborder="0"></div>
+    <!--<div class="videoImage" id="video-placeholder"></div>-->
   </div>
   <div class="video-list">
-    <div class="video-li" *ngFor="let list of youtubeList" (click)="pickVideo(list)">
+    <div class="video-li" *ngFor="let list of youtubeList" (click)="playVideo($event, list)">
       <div class="video-img">
         <img [src]="list.snippet.thumbnails.high.url" alt="" />
       </div>

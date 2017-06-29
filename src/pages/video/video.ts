@@ -27,6 +27,13 @@ export class VideoPage {
   constructor(public navCtrl: NavController, private sanitizer: DomSanitizer,
     private http: Http, private loadingController: LoadingController, public ytPlayer: YoutubeService) {
       this.fetchData();
+      // this.ytPlayer.setupPlayer();
+  }
+
+  ionViewDidLoad() {
+    this.ytPlayer.setupPlayer(() => {
+      this.ytPlayer.launchPlayer(this.youtubeList[0].id, this.youtubeList[0].snippet.title);
+    });
   }
 
   launchYTPlayer(id, title): void {
@@ -47,8 +54,9 @@ export class VideoPage {
     loader.present().then(() => {
       this.http.get(url).map(res => res.json()).subscribe(data => {
         this.youtubeList = data.items;
-        const videoId = this.youtubeList[0].id.videoId;
-        let videoUrl = `https://youtube.com/embed/${videoId}`;
+        const videoId = this.youtubeList[0].id;
+        // this.ytPlayer.launchPlayer(post.id, post.snippet.title);
+        let videoUrl = `https://youtube.com/embed/${videoId}?enablejsapi=1`;
         this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
         console.log(this.youtubeList);
         loader.dismiss();
@@ -56,10 +64,17 @@ export class VideoPage {
     });
   }
 
-  pickVideo(video: any) {
-    let url = `https://youtube.com/embed/${video.id.videoId}`
-    this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(url)
+  // pickVideo(video: any) {
+  //   let url = `https://youtube.com/embed/${video.id.videoId}?enablejsapi=1`
+  //   this.currentVideo = this.sanitizer.bypassSecurityTrustResourceUrl(url)
+  // }
+
+  playVideo(e, post): void {
+      console.log(post);
+      this.onPlaying = true;
+      this.ytPlayer.launchPlayer(post.id, post.snippet.title);
   }
+
   gotoPostPage() {
     this.navCtrl.push(PostPage);
   }

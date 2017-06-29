@@ -1,5 +1,6 @@
 import { Http, URLSearchParams, Response } from '@angular/http';
 import { Injectable, NgZone } from '@angular/core';
+import { Events } from "ionic-angular";
 import { window } from '@angular/platform-browser/src/facade/browser';
 
 
@@ -15,8 +16,12 @@ export class YoutubeService {
     playerWidth: '200'
   }
 
-  constructor() {
-    this.setupPlayer();
+  constructor(public events: Events) {
+    // this.setupPlayer();
+
+    this.events.subscribe('App:Paused', () => {
+      this.youtube.player.pauseVideo();
+    });
   }
 
   bindPlayer(elementId): void {
@@ -25,7 +30,7 @@ export class YoutubeService {
 
   createPlayer(): void {
     console.log(this.youtube.playerId, 'playerId');
-    var yTInit = new window.YT.Player('video-placeholder', {
+    return new window.YT.Player(this.youtube.playerId, {
       height: this.youtube.playerHeight,
       width: this.youtube.playerWidth,
       playerVars: {
@@ -33,8 +38,6 @@ export class YoutubeService {
         showinfo: 0
       }
     });
-    console.log(yTInit, 'youtube init');
-    return yTInit;
   }
 
   loadPlayer(): void {
@@ -47,7 +50,7 @@ export class YoutubeService {
     }
   }
 
-  setupPlayer() {
+  setupPlayer(callback) {
     // in production mode, the youtube iframe api script tag is loaded
     // before the bundle.js, so the 'onYouTubeIfarmeAPIReady' has
     // already been triggered
@@ -58,16 +61,19 @@ export class YoutubeService {
         if (window['YT']) {
           console.log('Youtube API is ready');
           this.youtube.ready = true;
-          this.bindPlayer('video-placeholder');
+          this.bindPlayer('video-player');
           return this.loadPlayer();
         }
       };
+      callback(true);
     }, 2000);
     if (window.YT && window.YT.Player) {
       console.log('Youtube API is ready');
       this.youtube.ready = true;
-      this.bindPlayer('video-placeholder');
+      this.bindPlayer('video-player');
       this.loadPlayer();
+      console.log(this.youtube.player, "player");
+      callback(true);
     }
   }
 
